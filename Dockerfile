@@ -6,6 +6,7 @@ COPY requirements.txt .
 
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 RUN pip install streamlit
+Run pip install os
 
 COPY main.py .
 
