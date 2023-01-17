@@ -8,17 +8,6 @@ model = "text-davinci-003"
 st.write("# Explain Like I'm 5")
 input_str = st.text_input("What do you want to know?", key="input")
 
-st.write("""
-<script>
-    document.getElementById("input").addEventListener("keyup", function(event) {
-    event.preventDefault();
-    if (event.keyCode === 13) {
-        document.getElementById("submit").click();
-    }
-    });
-</script>
-""", unsafe_allow_html=True)
-
 if not input_str.endswith("?"):
     input_str += "?"
 
