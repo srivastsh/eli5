@@ -1,7 +1,8 @@
+import os
 import streamlit as st
 import openai
 
-openai.api_key = "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"
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 model = "text-davinci-003"
 
 st.write("# Explain Like I'm 5")
