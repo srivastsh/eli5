@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: eli5-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: eli5
+  template:
+    metadata:
+      labels:
+        app: eli5
+    spec:
+      containers:
+      - name: eli5
+        image: eli5:latest
+        ports:
+        - containerPort: 8501
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+          requests:
+            memory: "128Mi"
+            cpu: "250m"
